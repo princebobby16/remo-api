@@ -7,6 +7,7 @@
 	<artifactId>momo-recorder</artifactId>
 	<version>0.0.1</version>
 	<name>momo-recorder</name>
+	<packaging>jar</packaging>
 	<description>Momo Recorder</description>
 
 	<properties>
@@ -141,22 +142,6 @@
 				<configuration>
 					<source>7</source>
 					<target>7</target>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<!-- Build an executable JAR -->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.0</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.example.momorecorder.MomoRecorderApplication</mainClass>
-						</manifest>
-					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
