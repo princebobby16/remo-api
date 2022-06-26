@@ -135,7 +135,7 @@
 						<configuration>
 							<classifier>spring-boot</classifier>
 							<mainClass>
-								com.baeldung.executable.ExecutableMavenJar
+								com.example.momorecorder.MomoRecorderApplication
 							</mainClass>
 						</configuration>
 					</execution>
