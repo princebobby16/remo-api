@@ -11,6 +11,7 @@ import javax.persistence.Tuple;
 import java.math.BigInteger;
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -33,6 +34,10 @@ public class MomoRecordsService {
 
     public List<MomoRecords> findAll() {
         return recordsRepository.findAll();
+    }
+
+    public MomoRecords findOneById(String id) {
+        return recordsRepository.findById(UUID.fromString(id)).orElse(new MomoRecords());
     }
 
     public TransactionsCount countDailyTransactions() {

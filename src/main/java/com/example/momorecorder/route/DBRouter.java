@@ -13,6 +13,10 @@ public class DBRouter extends RouteBuilder {
                 .log("Received Body ${body}")
                 .bean(MomoRecordsService.class, "save(${body})");
 
+        from("{{route.findOneById}}")
+                .log("finding specific transaction with id ${header.id}")
+                .bean(MomoRecordsService.class, "findOneById(${header.id})");
+
         from("{{route.findAll}}")
                 .bean(MomoRecordsService.class, "findAll");
 

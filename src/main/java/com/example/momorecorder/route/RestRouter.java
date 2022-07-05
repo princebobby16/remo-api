@@ -38,20 +38,25 @@ public class RestRouter extends RouteBuilder {
                 .to("{{route.findAll}}")
                 .endRest()
 
-                .get("/records/today").route()
-                .to("{{route.findAllDailyTransaction}}")
-                .endRest()
-
-                .get("/records/today/count").route()
-                .to("{{route.countDailyTransactions}}")
-                .endRest()
-
                 .post("/records")
                 .route()
                 .marshal().json()
                 .unmarshal(getJacksonDataFormat())
                 .to("{{route.save}}")
                 .setHeader(Exchange.HTTP_RESPONSE_CODE, constant(201))
+                .endRest()
+
+                .get("/records/{id}")
+                .route()
+                .to("{{route.findOneById}}")
+                .endRest()
+
+                .get("/records/today").route()
+                .to("{{route.findAllDailyTransaction}}")
+                .endRest()
+
+                .get("/records/today/count").route()
+                .to("{{route.countDailyTransactions}}")
                 .endRest()
 
                 // commissions
